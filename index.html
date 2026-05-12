@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGİN</title>
+
+</head>
+
+<body>
+
+<script>
+
+    let attempts = 0;
+    let isLoggedIn = false;
+
+    while(attempts < 3 && !isLoggedIn){
+
+        let role = prompt("Rol daxil edin (admin və ya user):");
+        let password = prompt("Şifrə daxil edin:");
+
+        if(role === "user" && password === "123456"){
+
+            alert("Xoş gəldiniz!");
+            isLoggedIn = true;
+
+            window.location.href = "user.html";
+
+        }
+
+        else if(role === "admin" && password === "1234"){
+
+            alert("Xoş gəldiniz!");
+            isLoggedIn = true;
+
+            window.location.href = "admin.html";
+
+        }
+
+        else{
+
+            attempts++;
+
+            if(attempts < 3){
+
+                alert("Məlumatlar yanlışdır! Qalan cəhd sayı: " + (3 - attempts));
+
+                location.reload();
+
+            }
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
